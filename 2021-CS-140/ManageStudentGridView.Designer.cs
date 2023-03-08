@@ -28,23 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.closeBtn = new System.Windows.Forms.Button();
             this.studentDeleteBtn = new System.Windows.Forms.Button();
             this.studentUpdateBtn = new System.Windows.Forms.Button();
-            this.searchStudentBtn = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.studentSearchBox = new System.Windows.Forms.TextBox();
+            this.SearchLabel = new System.Windows.Forms.Label();
+            this.manageStudentForm = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.manageStudentForm.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(949, 322);
-            this.dataGridView1.TabIndex = 0;
             // 
             // closeBtn
             // 
@@ -56,6 +49,7 @@
             this.closeBtn.TabIndex = 9;
             this.closeBtn.Text = "Close";
             this.closeBtn.UseVisualStyleBackColor = true;
+            this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click_1);
             // 
             // studentDeleteBtn
             // 
@@ -67,6 +61,7 @@
             this.studentDeleteBtn.TabIndex = 8;
             this.studentDeleteBtn.Text = "Delete";
             this.studentDeleteBtn.UseVisualStyleBackColor = true;
+            this.studentDeleteBtn.Click += new System.EventHandler(this.studentDeleteBtn_Click);
             // 
             // studentUpdateBtn
             // 
@@ -78,25 +73,47 @@
             this.studentUpdateBtn.TabIndex = 7;
             this.studentUpdateBtn.Text = "Update";
             this.studentUpdateBtn.UseVisualStyleBackColor = true;
+            this.studentUpdateBtn.Click += new System.EventHandler(this.studentUpdateBtn_Click);
             // 
-            // searchStudentBtn
+            // dataGridView1
             // 
-            this.searchStudentBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.searchStudentBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchStudentBtn.Location = new System.Drawing.Point(24, 431);
-            this.searchStudentBtn.Name = "searchStudentBtn";
-            this.searchStudentBtn.Size = new System.Drawing.Size(104, 44);
-            this.searchStudentBtn.TabIndex = 6;
-            this.searchStudentBtn.Text = "Search";
-            this.searchStudentBtn.UseVisualStyleBackColor = true;
+            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(10, 64);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(949, 322);
+            this.dataGridView1.TabIndex = 0;
             // 
-            // panel1
+            // studentSearchBox
             // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(971, 522);
-            this.panel1.TabIndex = 10;
+            this.studentSearchBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.studentSearchBox.Location = new System.Drawing.Point(641, 30);
+            this.studentSearchBox.Name = "studentSearchBox";
+            this.studentSearchBox.Size = new System.Drawing.Size(217, 26);
+            this.studentSearchBox.TabIndex = 7;
+            this.studentSearchBox.TextChanged += new System.EventHandler(this.studentSearchBox_TextChanged);
+            // 
+            // SearchLabel
+            // 
+            this.SearchLabel.AutoSize = true;
+            this.SearchLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchLabel.Location = new System.Drawing.Point(543, 30);
+            this.SearchLabel.Name = "SearchLabel";
+            this.SearchLabel.Size = new System.Drawing.Size(70, 24);
+            this.SearchLabel.TabIndex = 8;
+            this.SearchLabel.Text = "Search";
+            // 
+            // manageStudentForm
+            // 
+            this.manageStudentForm.Controls.Add(this.SearchLabel);
+            this.manageStudentForm.Controls.Add(this.studentSearchBox);
+            this.manageStudentForm.Controls.Add(this.dataGridView1);
+            this.manageStudentForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.manageStudentForm.Location = new System.Drawing.Point(0, 0);
+            this.manageStudentForm.Name = "manageStudentForm";
+            this.manageStudentForm.Size = new System.Drawing.Size(971, 522);
+            this.manageStudentForm.TabIndex = 10;
+            this.manageStudentForm.Paint += new System.Windows.Forms.PaintEventHandler(this.manageStudentForm_Paint);
             // 
             // ManageStudentGridView
             // 
@@ -106,23 +123,23 @@
             this.Controls.Add(this.closeBtn);
             this.Controls.Add(this.studentDeleteBtn);
             this.Controls.Add(this.studentUpdateBtn);
-            this.Controls.Add(this.searchStudentBtn);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.manageStudentForm);
             this.Name = "ManageStudentGridView";
             this.Text = "ManageStudentGridView";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.manageStudentForm.ResumeLayout(false);
+            this.manageStudentForm.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button closeBtn;
         private System.Windows.Forms.Button studentDeleteBtn;
         private System.Windows.Forms.Button studentUpdateBtn;
-        private System.Windows.Forms.Button searchStudentBtn;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox studentSearchBox;
+        private System.Windows.Forms.Label SearchLabel;
+        private System.Windows.Forms.Panel manageStudentForm;
     }
 }

@@ -30,9 +30,9 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.titleBtn = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.descriptionBtn = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.closeBtn = new System.Windows.Forms.Button();
             this.addProjectBtn = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -60,14 +60,14 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Title";
             // 
-            // titleBtn
+            // textBox2
             // 
-            this.titleBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.titleBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleBtn.Location = new System.Drawing.Point(490, 211);
-            this.titleBtn.Name = "titleBtn";
-            this.titleBtn.Size = new System.Drawing.Size(191, 27);
-            this.titleBtn.TabIndex = 8;
+            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(490, 211);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(191, 27);
+            this.textBox2.TabIndex = 8;
             // 
             // label2
             // 
@@ -80,14 +80,14 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Description";
             // 
-            // descriptionBtn
+            // textBox1
             // 
-            this.descriptionBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.descriptionBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descriptionBtn.Location = new System.Drawing.Point(490, 149);
-            this.descriptionBtn.Name = "descriptionBtn";
-            this.descriptionBtn.Size = new System.Drawing.Size(191, 27);
-            this.descriptionBtn.TabIndex = 7;
+            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(490, 149);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(191, 27);
+            this.textBox1.TabIndex = 7;
             // 
             // closeBtn
             // 
@@ -129,9 +129,9 @@
             this.Controls.Add(this.closeBtn);
             this.Controls.Add(this.addProjectBtn);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.titleBtn);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.descriptionBtn);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "ManageProject";
@@ -145,9 +145,9 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox titleBtn;
+        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox descriptionBtn;
+        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button closeBtn;
         private System.Windows.Forms.Button addProjectBtn;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;

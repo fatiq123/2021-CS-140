@@ -16,6 +16,10 @@ namespace _2021_CS_140
         {
             InitializeComponent();
         }
+        private void closeBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
         private void manageStudentBtn_Click(object sender, EventArgs e)
         {
@@ -35,9 +39,34 @@ namespace _2021_CS_140
             p.Show();
         }
 
-        private void closeBtn_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
-            this.Close();
+            FormationOfStudentgroup f = new FormationOfStudentgroup();
+            f.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            AssignmentOfProjectToGroupStudent a = new AssignmentOfProjectToGroupStudent();
+            a.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            AssignmentOfMultipleAdvisorsToProject a = new AssignmentOfMultipleAdvisorsToProject();
+            a.Show();
+        }
+
+        private void manageEvaluationBtn_Click(object sender, EventArgs e)
+        {
+            ManageEvaluations m = new ManageEvaluations();
+            m.Show();
+        }
+
+        private void manageGroupEvaluationBtn_Click(object sender, EventArgs e)
+        {
+            MarkEvaluationAgainstGroup m = new MarkEvaluationAgainstGroup();
+            m.Show();
         }
     }
 }

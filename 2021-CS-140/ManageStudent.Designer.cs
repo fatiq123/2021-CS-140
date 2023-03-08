@@ -46,7 +46,7 @@
             this.showStudentBtn = new System.Windows.Forms.Button();
             this.closebtn = new System.Windows.Forms.Button();
             this.addstudentbtn = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // label8
@@ -213,7 +213,7 @@
             this.showStudentBtn.TabIndex = 22;
             this.showStudentBtn.Text = "SHOW STUDENT";
             this.showStudentBtn.UseVisualStyleBackColor = true;
-            this.showStudentBtn.Click += new System.EventHandler(this.showStudentBtn_Click_1);
+            this.showStudentBtn.Click += new System.EventHandler(this.showStudentBtn_Click);
             // 
             // closebtn
             // 
@@ -239,13 +239,13 @@
             this.addstudentbtn.UseVisualStyleBackColor = true;
             this.addstudentbtn.Click += new System.EventHandler(this.addstudentbtn_Click_1);
             // 
-            // flowLayoutPanel1
+            // panel1
             // 
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(973, 529);
-            this.flowLayoutPanel1.TabIndex = 23;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(973, 529);
+            this.panel1.TabIndex = 23;
             // 
             // ManageStudent
             // 
@@ -270,7 +270,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.panel1);
             this.Name = "ManageStudent";
             this.Text = "ManageStudent";
             this.ResumeLayout(false);
@@ -298,6 +298,6 @@
         private System.Windows.Forms.Button showStudentBtn;
         private System.Windows.Forms.Button closebtn;
         private System.Windows.Forms.Button addstudentbtn;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Panel panel1;
     }
 }

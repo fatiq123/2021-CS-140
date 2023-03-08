@@ -30,14 +30,14 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.manageStudentBtn = new System.Windows.Forms.Button();
-            this.manageAdvisorsBtn = new System.Windows.Forms.Button();
+            this.manageGroupEvaluationBtn = new System.Windows.Forms.Button();
+            this.manageEvaluationBtn = new System.Windows.Forms.Button();
+            this.assignmentOfAdvisorsBtn = new System.Windows.Forms.Button();
+            this.assignmentOfProject = new System.Windows.Forms.Button();
+            this.studentGroupBtn = new System.Windows.Forms.Button();
             this.manageProjectsBtn = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.manageAdvisorsBtn = new System.Windows.Forms.Button();
+            this.manageStudentBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.closeBtn = new System.Windows.Forms.Button();
@@ -69,11 +69,11 @@
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Controls.Add(this.button7, 0, 7);
-            this.tableLayoutPanel2.Controls.Add(this.button6, 0, 6);
-            this.tableLayoutPanel2.Controls.Add(this.button5, 0, 5);
-            this.tableLayoutPanel2.Controls.Add(this.button4, 0, 4);
-            this.tableLayoutPanel2.Controls.Add(this.button3, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.manageGroupEvaluationBtn, 0, 7);
+            this.tableLayoutPanel2.Controls.Add(this.manageEvaluationBtn, 0, 6);
+            this.tableLayoutPanel2.Controls.Add(this.assignmentOfAdvisorsBtn, 0, 5);
+            this.tableLayoutPanel2.Controls.Add(this.assignmentOfProject, 0, 4);
+            this.tableLayoutPanel2.Controls.Add(this.studentGroupBtn, 0, 3);
             this.tableLayoutPanel2.Controls.Add(this.manageProjectsBtn, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.manageAdvisorsBtn, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.manageStudentBtn, 0, 0);
@@ -92,29 +92,65 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(141, 434);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
-            // manageStudentBtn
+            // manageGroupEvaluationBtn
             // 
-            this.manageStudentBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.manageStudentBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.manageStudentBtn.Location = new System.Drawing.Point(3, 3);
-            this.manageStudentBtn.Name = "manageStudentBtn";
-            this.manageStudentBtn.Size = new System.Drawing.Size(135, 48);
-            this.manageStudentBtn.TabIndex = 0;
-            this.manageStudentBtn.Text = "Manage Students";
-            this.manageStudentBtn.UseVisualStyleBackColor = true;
-            this.manageStudentBtn.Click += new System.EventHandler(this.manageStudentBtn_Click);
+            this.manageGroupEvaluationBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.manageGroupEvaluationBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.manageGroupEvaluationBtn.Location = new System.Drawing.Point(3, 381);
+            this.manageGroupEvaluationBtn.Name = "manageGroupEvaluationBtn";
+            this.manageGroupEvaluationBtn.Size = new System.Drawing.Size(135, 50);
+            this.manageGroupEvaluationBtn.TabIndex = 7;
+            this.manageGroupEvaluationBtn.Text = "Group Evaluation";
+            this.manageGroupEvaluationBtn.UseVisualStyleBackColor = true;
+            this.manageGroupEvaluationBtn.Click += new System.EventHandler(this.manageGroupEvaluationBtn_Click);
             // 
-            // manageAdvisorsBtn
+            // manageEvaluationBtn
             // 
-            this.manageAdvisorsBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.manageAdvisorsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.manageAdvisorsBtn.Location = new System.Drawing.Point(3, 57);
-            this.manageAdvisorsBtn.Name = "manageAdvisorsBtn";
-            this.manageAdvisorsBtn.Size = new System.Drawing.Size(135, 48);
-            this.manageAdvisorsBtn.TabIndex = 1;
-            this.manageAdvisorsBtn.Text = "Manage Advisors";
-            this.manageAdvisorsBtn.UseVisualStyleBackColor = true;
-            this.manageAdvisorsBtn.Click += new System.EventHandler(this.manageAdvisorsBtn_Click);
+            this.manageEvaluationBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.manageEvaluationBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.manageEvaluationBtn.Location = new System.Drawing.Point(3, 327);
+            this.manageEvaluationBtn.Name = "manageEvaluationBtn";
+            this.manageEvaluationBtn.Size = new System.Drawing.Size(135, 48);
+            this.manageEvaluationBtn.TabIndex = 6;
+            this.manageEvaluationBtn.Text = "Manage Evaluation";
+            this.manageEvaluationBtn.UseVisualStyleBackColor = true;
+            this.manageEvaluationBtn.Click += new System.EventHandler(this.manageEvaluationBtn_Click);
+            // 
+            // assignmentOfAdvisorsBtn
+            // 
+            this.assignmentOfAdvisorsBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.assignmentOfAdvisorsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.assignmentOfAdvisorsBtn.Location = new System.Drawing.Point(3, 273);
+            this.assignmentOfAdvisorsBtn.Name = "assignmentOfAdvisorsBtn";
+            this.assignmentOfAdvisorsBtn.Size = new System.Drawing.Size(135, 48);
+            this.assignmentOfAdvisorsBtn.TabIndex = 5;
+            this.assignmentOfAdvisorsBtn.Text = "Assignment Of Advisors";
+            this.assignmentOfAdvisorsBtn.UseVisualStyleBackColor = true;
+            this.assignmentOfAdvisorsBtn.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // assignmentOfProject
+            // 
+            this.assignmentOfProject.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.assignmentOfProject.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.assignmentOfProject.Location = new System.Drawing.Point(3, 219);
+            this.assignmentOfProject.Name = "assignmentOfProject";
+            this.assignmentOfProject.Size = new System.Drawing.Size(135, 48);
+            this.assignmentOfProject.TabIndex = 4;
+            this.assignmentOfProject.Text = "Assignment Of Project ";
+            this.assignmentOfProject.UseVisualStyleBackColor = true;
+            this.assignmentOfProject.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // studentGroupBtn
+            // 
+            this.studentGroupBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.studentGroupBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.studentGroupBtn.Location = new System.Drawing.Point(3, 165);
+            this.studentGroupBtn.Name = "studentGroupBtn";
+            this.studentGroupBtn.Size = new System.Drawing.Size(135, 48);
+            this.studentGroupBtn.TabIndex = 3;
+            this.studentGroupBtn.Text = "Student Group";
+            this.studentGroupBtn.UseVisualStyleBackColor = true;
+            this.studentGroupBtn.Click += new System.EventHandler(this.button3_Click);
             // 
             // manageProjectsBtn
             // 
@@ -128,60 +164,29 @@
             this.manageProjectsBtn.UseVisualStyleBackColor = true;
             this.manageProjectsBtn.Click += new System.EventHandler(this.manageProjectsBtn_Click);
             // 
-            // button3
+            // manageAdvisorsBtn
             // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(3, 165);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(135, 48);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Manage Students";
-            this.button3.UseVisualStyleBackColor = true;
+            this.manageAdvisorsBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.manageAdvisorsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.manageAdvisorsBtn.Location = new System.Drawing.Point(3, 57);
+            this.manageAdvisorsBtn.Name = "manageAdvisorsBtn";
+            this.manageAdvisorsBtn.Size = new System.Drawing.Size(135, 48);
+            this.manageAdvisorsBtn.TabIndex = 1;
+            this.manageAdvisorsBtn.Text = "Manage Advisors";
+            this.manageAdvisorsBtn.UseVisualStyleBackColor = true;
+            this.manageAdvisorsBtn.Click += new System.EventHandler(this.manageAdvisorsBtn_Click);
             // 
-            // button4
+            // manageStudentBtn
             // 
-            this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(3, 219);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(135, 48);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Manage Students";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(3, 273);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(135, 48);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "Manage Students";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(3, 327);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(135, 48);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "Manage Students";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(3, 381);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(135, 50);
-            this.button7.TabIndex = 7;
-            this.button7.Text = "Manage Students";
-            this.button7.UseVisualStyleBackColor = true;
+            this.manageStudentBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.manageStudentBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.manageStudentBtn.Location = new System.Drawing.Point(3, 3);
+            this.manageStudentBtn.Name = "manageStudentBtn";
+            this.manageStudentBtn.Size = new System.Drawing.Size(135, 48);
+            this.manageStudentBtn.TabIndex = 0;
+            this.manageStudentBtn.Text = "Manage Students";
+            this.manageStudentBtn.UseVisualStyleBackColor = true;
+            this.manageStudentBtn.Click += new System.EventHandler(this.manageStudentBtn_Click);
             // 
             // panel1
             // 
@@ -234,11 +239,11 @@
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button manageGroupEvaluationBtn;
+        private System.Windows.Forms.Button manageEvaluationBtn;
+        private System.Windows.Forms.Button assignmentOfAdvisorsBtn;
+        private System.Windows.Forms.Button assignmentOfProject;
+        private System.Windows.Forms.Button studentGroupBtn;
         private System.Windows.Forms.Button manageProjectsBtn;
         private System.Windows.Forms.Button manageAdvisorsBtn;
         private System.Windows.Forms.Button manageStudentBtn;
