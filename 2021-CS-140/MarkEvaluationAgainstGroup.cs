@@ -56,28 +56,35 @@ namespace _2021_CS_140
 
         private void advisorAssignBtn_Click(object sender, EventArgs e)
         {
-            if (comboBox1.Text != "" && comboBox2.Text != "" && textBox1.Text != "" && dateTimePicker1 != null)
+            try
             {
-                SqlConnection con = new SqlConnection("Data Source=DESKTOP-K54JBCF;Initial Catalog=ProjectA;Integrated Security=True");
-                con.Open();
+                if (comboBox1.Text != "" && comboBox2.Text != "" && textBox1.Text != "" && dateTimePicker1 != null)
+                {
+                    SqlConnection con = new SqlConnection("Data Source=DESKTOP-K54JBCF;Initial Catalog=ProjectA;Integrated Security=True");
+                    con.Open();
 
-                SqlCommand cmd = new SqlCommand("Insert into Evaluation values(@GroupId,@EvaluationId,@ObtainedMarks,@EvaluationDate)", con);
+                    SqlCommand cmd = new SqlCommand("Insert into GroupEvaluation values(@GroupId,@EvaluationId,@ObtainedMarks,@EvaluationDate)", con);
 
-                cmd.Parameters.AddWithValue("@GroupId", comboBox1.Text);
-                cmd.Parameters.AddWithValue("@EvaluationId", comboBox2.Text);
-                cmd.Parameters.AddWithValue("@ObtainedMarks", textBox1.Text);
-                cmd.Parameters.Add("@EvaluationDate", SqlDbType.Date).Value = dateTimePicker1.Value.Date;
+                    cmd.Parameters.AddWithValue("@GroupId", comboBox1.Text);
+                    cmd.Parameters.AddWithValue("@EvaluationId", comboBox2.Text);
+                    cmd.Parameters.AddWithValue("@ObtainedMarks", textBox1.Text);
+                    cmd.Parameters.Add("@EvaluationDate", SqlDbType.Date).Value = dateTimePicker1.Value.Date;
 
 
-                cmd.ExecuteNonQuery();
-                con.Close();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
 
-                MessageBox.Show("Student Evaluated Successfuly", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Student Evaluated Successfuly", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Required Fields should not Empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
             }
-            else
+            catch(Exception ex)
             {
-                MessageBox.Show("Required Fields should not Empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                MessageBox.Show(ex.Message);
             }
 
         }

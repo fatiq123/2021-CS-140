@@ -52,54 +52,60 @@ namespace _2021_CS_140
 
         private void addstudentbtn_Click_1(object sender, EventArgs e)
         {
-
-            if (textBox1.Text != "" && textBox2.Text != "" && textBox3.Text != "" && textBox4.Text != "" && textBox5.Text != "" && dateTimePicker1 != null && comboBox1 != null)
+            try
             {
-                SqlConnection con = new SqlConnection("Data Source=DESKTOP-K54JBCF;Initial Catalog=ProjectA;Integrated Security=True");
-                con.Open();
-
-                // add values             
-                SqlCommand cmd = new SqlCommand("insert into Person values(@FirstName,@LastName,@Contact,@Email,@DateOfBirth,@Gender)", con);
-                cmd.Parameters.AddWithValue("@FirstName", textBox2.Text);
-                cmd.Parameters.AddWithValue("@LastName", textBox3.Text);
-                cmd.Parameters.AddWithValue("@Contact", textBox4.Text);
-                cmd.Parameters.AddWithValue("@Email", textBox5.Text);
-                cmd.Parameters.Add("@DateOfBirth", SqlDbType.Date).Value = dateTimePicker1.Value.Date;
-
-              
-                //string connectionString = "Data Source=DESKTOP-K54JBCF;Initial Catalog=ProjectA;Integrated Security=True";
-               
-                if (comboBox1.SelectedIndex == -1)
+                if (textBox1.Text != "" && textBox2.Text != "" && textBox3.Text != "" && textBox4.Text != "" && textBox5.Text != "" && dateTimePicker1 != null && comboBox1 != null)
                 {
-                    MessageBox.Show("Please select a option from drop down menu");
-                    comboBox1.Focus();
-                }
-                int gender;
-                if(comboBox1.SelectedIndex == 0)
-                {
-                    gender = 1;
+                    SqlConnection con = new SqlConnection("Data Source=DESKTOP-K54JBCF;Initial Catalog=ProjectA;Integrated Security=True");
+                    con.Open();
+
+                    // add values             
+                    SqlCommand cmd = new SqlCommand("insert into Person values(@FirstName,@LastName,@Contact,@Email,@DateOfBirth,@Gender)", con);
+                    cmd.Parameters.AddWithValue("@FirstName", textBox2.Text);
+                    cmd.Parameters.AddWithValue("@LastName", textBox3.Text);
+                    cmd.Parameters.AddWithValue("@Contact", textBox4.Text);
+                    cmd.Parameters.AddWithValue("@Email", textBox5.Text);
+                    cmd.Parameters.Add("@DateOfBirth", SqlDbType.Date).Value = dateTimePicker1.Value.Date;
+
+
+                    //string connectionString = "Data Source=DESKTOP-K54JBCF;Initial Catalog=ProjectA;Integrated Security=True";
+
+                    if (comboBox1.SelectedIndex == -1)
+                    {
+                        MessageBox.Show("Please select a option from drop down menu");
+                        comboBox1.Focus();
+                    }
+                    int gender;
+                    if (comboBox1.SelectedIndex == 0)
+                    {
+                        gender = 1;
+                    }
+                    else
+                    {
+                        gender = 2;
+                    }
+
+                    cmd.Parameters.AddWithValue("@Gender", gender);
+                    cmd.ExecuteNonQuery();
+
+                    string insertStudentQuery = "insert into student (Id,RegistrationNo) Values((SELECT MAX(Id) FROM Person), @regNo)";
+                    SqlCommand insertStudentCommand = new SqlCommand(insertStudentQuery, con);
+                    insertStudentCommand.Parameters.AddWithValue("@regNo", textBox1.Text);
+                    insertStudentCommand.ExecuteNonQuery();
+
+                    con.Close();
+
+                    MessageBox.Show("Student Added Successfuly", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    gender = 2;
+                    MessageBox.Show("Required Fields should not Empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 }
-
-                cmd.Parameters.AddWithValue("@Gender", gender);
-                cmd.ExecuteNonQuery();
-
-                string insertStudentQuery = "insert into student (Id,RegistrationNo) Values((SELECT MAX(Id) FROM Person), @regNo)";
-                SqlCommand insertStudentCommand = new SqlCommand(insertStudentQuery, con);
-                insertStudentCommand.Parameters.AddWithValue("@regNo", textBox2.Text);
-                insertStudentCommand.ExecuteNonQuery();
-
-                con.Close();
-
-                MessageBox.Show("Student Added Successfuly", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else
+            catch(Exception ex)
             {
-                MessageBox.Show("Required Fields should not Empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                MessageBox.Show(ex.Message);
             }
 
         }

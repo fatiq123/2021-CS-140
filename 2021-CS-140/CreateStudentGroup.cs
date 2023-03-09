@@ -25,22 +25,29 @@ namespace _2021_CS_140
 
         private void createBtn_Click(object sender, EventArgs e)
         {
-            if (dateTimePicker1 != null)
+            try
             {
-                SqlConnection con = new SqlConnection("Data Source=DESKTOP-K54JBCF;Initial Catalog=ProjectA;Integrated Security=True");
-                SqlCommand cmd = new SqlCommand("Insert into [Group] values(@Created_On)", con);
-                SqlCommand cmd1 = new SqlCommand("insert into Person values(@FirstName,@LastName,@Contact,@Email,@DateOfBirth,@Gender)", con);
-                con.Open();
-                cmd.Parameters.Add("@Created_On", SqlDbType.Date).Value = dateTimePicker1.Value.Date;
-                cmd.ExecuteNonQuery();
+                if (dateTimePicker1 != null)
+                {
+                    SqlConnection con = new SqlConnection("Data Source=DESKTOP-K54JBCF;Initial Catalog=ProjectA;Integrated Security=True");
+                    SqlCommand cmd = new SqlCommand("Insert into [Group] values(@Created_On)", con);
+                    SqlCommand cmd1 = new SqlCommand("insert into Person values(@FirstName,@LastName,@Contact,@Email,@DateOfBirth,@Gender)", con);
+                    con.Open();
+                    cmd.Parameters.Add("@Created_On", SqlDbType.Date).Value = dateTimePicker1.Value.Date;
+                    cmd.ExecuteNonQuery();
 
-                con.Close();
+                    con.Close();
 
-                MessageBox.Show("Group Added Successfuly", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Group Added Successfuly", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Date Field should not Empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
+            catch(Exception ex)
             {
-                MessageBox.Show("Date Field should not Empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message);
             }
         }
     }

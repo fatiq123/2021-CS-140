@@ -37,10 +37,12 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
             this.assignProjectBtn = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(268, 23);
@@ -51,6 +53,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(300, 118);
@@ -61,6 +64,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(300, 161);
@@ -71,6 +75,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(300, 204);
@@ -81,6 +86,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(501, 121);
             this.comboBox1.Name = "comboBox1";
@@ -89,6 +95,7 @@
             // 
             // comboBox2
             // 
+            this.comboBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(501, 165);
             this.comboBox2.Name = "comboBox2";
@@ -97,6 +104,7 @@
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Location = new System.Drawing.Point(501, 208);
             this.dateTimePicker1.Name = "dateTimePicker1";
@@ -105,6 +113,7 @@
             // 
             // button1
             // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(591, 307);
             this.button1.Name = "button1";
@@ -116,6 +125,7 @@
             // 
             // assignProjectBtn
             // 
+            this.assignProjectBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.assignProjectBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.assignProjectBtn.Location = new System.Drawing.Point(445, 307);
             this.assignProjectBtn.Name = "assignProjectBtn";
@@ -124,6 +134,14 @@
             this.assignProjectBtn.Text = "Assign Project";
             this.assignProjectBtn.UseVisualStyleBackColor = true;
             this.assignProjectBtn.Click += new System.EventHandler(this.assignProjectBtn_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(983, 530);
+            this.panel1.TabIndex = 9;
             // 
             // AssignmentOfProjectToGroupStudent
             // 
@@ -139,6 +157,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel1);
             this.Name = "AssignmentOfProjectToGroupStudent";
             this.Text = "AssignmentOfProjectToGroupStudent";
             this.Load += new System.EventHandler(this.AssignmentOfProjectToGroupStudent_Load);
@@ -158,5 +177,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button assignProjectBtn;
+        private System.Windows.Forms.Panel panel1;
     }
 }

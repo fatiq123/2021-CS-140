@@ -36,6 +36,8 @@
             this.SearchLabel = new System.Windows.Forms.Label();
             this.advisorSearchBox = new System.Windows.Forms.TextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.manageStudentForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -112,16 +114,34 @@
             this.advisorSearchBox.Name = "advisorSearchBox";
             this.advisorSearchBox.Size = new System.Drawing.Size(217, 26);
             this.advisorSearchBox.TabIndex = 7;
+            this.advisorSearchBox.TextChanged += new System.EventHandler(this.advisorSearchBox_TextChanged);
             // 
             // dataGridView2
             // 
             this.dataGridView2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Edit,
+            this.Delete});
             this.dataGridView2.Location = new System.Drawing.Point(15, 67);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(949, 322);
             this.dataGridView2.TabIndex = 0;
-
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            // 
+            // Edit
+            // 
+            this.Edit.HeaderText = "Edit";
+            this.Edit.Name = "Edit";
+            this.Edit.Text = "Edit";
+            this.Edit.UseColumnTextForButtonValue = true;
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Name = "Delete";
+            this.Delete.Text = "Delete";
+            this.Delete.UseColumnTextForButtonValue = true;
             // 
             // ManageAdvisorGridView
             // 
@@ -153,5 +173,7 @@
         private System.Windows.Forms.Label SearchLabel;
         private System.Windows.Forms.TextBox advisorSearchBox;
         private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridViewButtonColumn Edit;
+        private System.Windows.Forms.DataGridViewButtonColumn Delete;
     }
 }

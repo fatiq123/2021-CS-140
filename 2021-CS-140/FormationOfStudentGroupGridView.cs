@@ -17,17 +17,17 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace _2021_CS_140
 {
-    public partial class ManageStudentGridView : Form
+    public partial class FormationOfStudentGroupGridView : Form
     {
         // to make it global
         private DataTable stdDataTable = new DataTable();
 
-        public ManageStudentGridView()
+        public FormationOfStudentGroupGridView()
         {
             InitializeComponent();
         }
 
-        public ManageStudentGridView(DataTable dataTable)
+        public FormationOfStudentGroupGridView(DataTable dataTable)
         {
             InitializeComponent();
 
@@ -63,7 +63,7 @@ namespace _2021_CS_140
         {
             try
             {
-                (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = String.Format("Email Like '%" + studentSearchBox.Text + "%'");
+                (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = String.Format("Email Like '%" + groupStudentSearchBox.Text + "%'");
             }
             catch(Exception ex)
             {
@@ -108,10 +108,6 @@ namespace _2021_CS_140
 
         }
 
-        private void studentDeleteBtn_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -120,19 +116,17 @@ namespace _2021_CS_140
             if (e.ColumnIndex == dataGridView1.Columns["Edit"].Index && e.RowIndex >= 0)
             {
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-                string registrartionNo = row.Cells["RegistrationNo"].Value.ToString(); // Replace ID_COLUMN_NAME with the name of the ID column in your database table
+                int groupId = Convert.ToInt32(row.Cells["GroupId"].Value.ToString()); // Replace ID_COLUMN_NAME with the name of the ID column in your database table
                 // Replace NAME_COLUMN_NAME with the name of the name column in your database table
-                string firstName = row.Cells["FirstName"].Value.ToString();
-                string lastName = row.Cells["LastName"].Value.ToString();
-                string contact = row.Cells["Contact"].Value.ToString();
-                string email = row.Cells["Email"].Value.ToString();
-                string date = row.Cells["DateOfBirth"].Value.ToString();
-                int gender = Convert.ToInt32(row.Cells["Gender"].Value.ToString());
+                int studentId = Convert.ToInt32(row.Cells["StudentId"].Value.ToString());
+                int status = Convert.ToInt32(row.Cells["Status"].Value.ToString());
+
+                string date = row.Cells["AssignmentDate"].Value.ToString();
                 // Similarly, get the values of all other columns you want to edit
 
 
                 // Show a form with textboxes to edit the data
-                EditManageStudent editForm = new EditManageStudent(registrartionNo, firstName, lastName, contact, email, date, gender);
+                EditManageStudent editForm = new EditManageStudent(groupId, studentId, status, date);
                 DialogResult result = editForm.ShowDialog();
 
                 // If the user clicks OK on the edit form, update the data in the database
@@ -171,6 +165,24 @@ namespace _2021_CS_140
 
         }
 
+        private void FormationOfStudentGroupGridView_Load(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection("Data Source=DESKTOP-K54JBCF;Initial Catalog=ProjectA;Integrated Security=True");
 
+            // create a SqlCommand object
+            SqlCommand cmd = new SqlCommand("Select GroupId,StudentId,Status,AssignmentDate FROM GroupStudent", con);
+
+            // create a SqlDataAdapter object
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            // create a DataTable object
+            DataTable dt = new DataTable();
+
+            // fill the DataTable with data from the database
+            da.Fill(dt);
+
+            // set the DataGridView's DataSource property to the DataTable
+            dataGridView1.DataSource = dt;
+        }
     }
 }

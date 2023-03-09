@@ -1,6 +1,6 @@
 ﻿namespace _2021_CS_140
 {
-    partial class ManageStudentGridView
+    partial class FormationOfStudentGroupGridView
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.studentSearchBox = new System.Windows.Forms.TextBox();
+            this.groupStudentSearchBox = new System.Windows.Forms.TextBox();
             this.SearchLabel = new System.Windows.Forms.Label();
             this.manageStudentForm = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -78,14 +78,14 @@
             this.Delete.Text = "Delete";
             this.Delete.UseColumnTextForButtonValue = true;
             // 
-            // studentSearchBox
+            // groupStudentSearchBox
             // 
-            this.studentSearchBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.studentSearchBox.Location = new System.Drawing.Point(641, 30);
-            this.studentSearchBox.Name = "studentSearchBox";
-            this.studentSearchBox.Size = new System.Drawing.Size(217, 26);
-            this.studentSearchBox.TabIndex = 7;
-            this.studentSearchBox.TextChanged += new System.EventHandler(this.studentSearchBox_TextChanged);
+            this.groupStudentSearchBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupStudentSearchBox.Location = new System.Drawing.Point(641, 30);
+            this.groupStudentSearchBox.Name = "groupStudentSearchBox";
+            this.groupStudentSearchBox.Size = new System.Drawing.Size(217, 26);
+            this.groupStudentSearchBox.TabIndex = 7;
+            this.groupStudentSearchBox.TextChanged += new System.EventHandler(this.studentSearchBox_TextChanged);
             // 
             // SearchLabel
             // 
@@ -100,7 +100,7 @@
             // manageStudentForm
             // 
             this.manageStudentForm.Controls.Add(this.SearchLabel);
-            this.manageStudentForm.Controls.Add(this.studentSearchBox);
+            this.manageStudentForm.Controls.Add(this.groupStudentSearchBox);
             this.manageStudentForm.Controls.Add(this.dataGridView1);
             this.manageStudentForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.manageStudentForm.Location = new System.Drawing.Point(0, 0);
@@ -109,15 +109,16 @@
             this.manageStudentForm.TabIndex = 10;
             this.manageStudentForm.Paint += new System.Windows.Forms.PaintEventHandler(this.manageStudentForm_Paint);
             // 
-            // ManageStudentGridView
+            // FormationOfStudentGroupGridView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(971, 522);
             this.Controls.Add(this.closeBtn);
             this.Controls.Add(this.manageStudentForm);
-            this.Name = "ManageStudentGridView";
+            this.Name = "FormationOfStudentGroupGridView";
             this.Text = "ManageStudentGridView";
+            this.Load += new System.EventHandler(this.FormationOfStudentGroupGridView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.manageStudentForm.ResumeLayout(false);
             this.manageStudentForm.PerformLayout();
@@ -128,7 +129,7 @@
         #endregion
         private System.Windows.Forms.Button closeBtn;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox studentSearchBox;
+        private System.Windows.Forms.TextBox groupStudentSearchBox;
         private System.Windows.Forms.Label SearchLabel;
         private System.Windows.Forms.Panel manageStudentForm;
         private System.Windows.Forms.DataGridViewButtonColumn Edit;

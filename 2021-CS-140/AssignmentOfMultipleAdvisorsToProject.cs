@@ -67,41 +67,47 @@ namespace _2021_CS_140
 
         private void advisorAssignBtn_Click(object sender, EventArgs e)
         {
-            if (comboBox1.Text != "" && comboBox2.Text != "" && comboBox3.Text != "")
+            try
             {
-                SqlConnection con = new SqlConnection("Data Source=DESKTOP-K54JBCF;Initial Catalog=ProjectA;Integrated Security=True");
-                con.Open();
-
-                SqlCommand cmd = new SqlCommand("Insert into ProjectAdvisor values(@AdvisorId,@ProjectId,@AdvisorRole,@AssignmentDate)", con);
-                cmd.Parameters.AddWithValue("@AdvisorId", comboBox1.Text);
-                cmd.Parameters.AddWithValue("@ProjectId", comboBox2.Text);
-
-                //SqlCommand cmd1 = new SqlCommand("Select Id FROM Lookup WHERE Value = @Id");
-
-                // we will get id from lookup then we will show it but if we do it simple by parse then it will generate error
-                SqlCommand cmd2 = new SqlCommand("Select Id from Lookup Where Value = @temp", con);    // temp2 ham na khud rakha ha
-                cmd2.Parameters.AddWithValue("@temp", comboBox3.Text);
-                object result = cmd2.ExecuteScalar();
-                if (result != null)
+                if (comboBox1.Text != "" && comboBox2.Text != "" && comboBox3.Text != "")
                 {
-                    projectvalue = Convert.ToInt32(result);
+                    SqlConnection con = new SqlConnection("Data Source=DESKTOP-K54JBCF;Initial Catalog=ProjectA;Integrated Security=True");
+                    con.Open();
+
+                    SqlCommand cmd = new SqlCommand("Insert into ProjectAdvisor values(@AdvisorId,@ProjectId,@AdvisorRole,@AssignmentDate)", con);
+                    cmd.Parameters.AddWithValue("@AdvisorId", comboBox1.Text);
+                    cmd.Parameters.AddWithValue("@ProjectId", comboBox2.Text);
+
+                    //SqlCommand cmd1 = new SqlCommand("Select Id FROM Lookup WHERE Value = @Id");
+
+                    // we will get id from lookup then we will show it but if we do it simple by parse then it will generate error
+                    SqlCommand cmd2 = new SqlCommand("Select Id from Lookup Where Value = @temp", con);    // temp2 ham na khud rakha ha
+                    cmd2.Parameters.AddWithValue("@temp", comboBox3.Text);
+                    object result = cmd2.ExecuteScalar();
+                    if (result != null)
+                    {
+                        projectvalue = Convert.ToInt32(result);
+                    }
+
+                    // then it will convert projectvalue from ComboBox into int then we will pass it simply
+                    cmd.Parameters.AddWithValue("@AdvisorRole", projectvalue);
+                    cmd.Parameters.Add("@AssignmentDate", SqlDbType.Date).Value = dateTimePicker1.Value.Date;
+
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+
+                    MessageBox.Show("Advisor Assigned Successfuly", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                else
+                {
+                    MessageBox.Show("Required Fields should not Empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                // then it will convert projectvalue from ComboBox into int then we will pass it simply
-                cmd.Parameters.AddWithValue("@AdvisorRole", projectvalue);
-                cmd.Parameters.Add("@AssignmentDate", SqlDbType.Date).Value = dateTimePicker1.Value.Date;
-
-                cmd.ExecuteNonQuery();
-                con.Close();
-
-                MessageBox.Show("Advisor Assigned Successfuly", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
-            else
+            catch(Exception ex)
             {
-                MessageBox.Show("Required Fields should not Empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                MessageBox.Show(ex.Message);
             }
-
         }
     }
 }

@@ -53,24 +53,31 @@ namespace _2021_CS_140
         }
         private void assignProjectBtn_Click(object sender, EventArgs e)
         {
-            if (comboBox1.Text != "" && comboBox2.Text != "" && dateTimePicker1 != null)
+            try
             {
+                if (comboBox1.Text != "" && comboBox2.Text != "" && dateTimePicker1 != null)
+                {
 
-                SqlConnection con = new SqlConnection("Data Source=DESKTOP-K54JBCF;Initial Catalog=ProjectA;Integrated Security=True");
-                con.Open();
-                SqlCommand cmd = new SqlCommand("Insert into GroupProject values(@ProjectId,@GroupId,@AssignmentDate)", con);
-                cmd.Parameters.AddWithValue("@ProjectId", int.Parse(comboBox1.Text));
-                cmd.Parameters.AddWithValue("@GroupId", int.Parse(comboBox2.Text));
-                cmd.Parameters.Add("@AssignmentDate", SqlDbType.Date).Value = dateTimePicker1.Value.Date;
-                cmd.ExecuteNonQuery();
-                con.Close();
+                    SqlConnection con = new SqlConnection("Data Source=DESKTOP-K54JBCF;Initial Catalog=ProjectA;Integrated Security=True");
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("Insert into GroupProject values(@ProjectId,@GroupId,@AssignmentDate)", con);
+                    cmd.Parameters.AddWithValue("@ProjectId", int.Parse(comboBox1.Text));
+                    cmd.Parameters.AddWithValue("@GroupId", int.Parse(comboBox2.Text));
+                    cmd.Parameters.Add("@AssignmentDate", SqlDbType.Date).Value = dateTimePicker1.Value.Date;
+                    cmd.ExecuteNonQuery();
+                    con.Close();
 
-                MessageBox.Show("Project Added Successfuly", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Project Added Successfuly", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                }
+                else
+                {
+                    MessageBox.Show("Project Fields should not Empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
+            catch(Exception ex)
             {
-                MessageBox.Show("Project Fields should not Empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message);
             }
         }
 

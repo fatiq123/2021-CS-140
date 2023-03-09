@@ -37,10 +37,12 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(341, 9);
@@ -51,6 +53,7 @@
             // 
             // closeBtn
             // 
+            this.closeBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.closeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.closeBtn.Location = new System.Drawing.Point(600, 340);
             this.closeBtn.Name = "closeBtn";
@@ -62,6 +65,7 @@
             // 
             // manageEvaluationBtn
             // 
+            this.manageEvaluationBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.manageEvaluationBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.manageEvaluationBtn.Location = new System.Drawing.Point(444, 340);
             this.manageEvaluationBtn.Name = "manageEvaluationBtn";
@@ -83,6 +87,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(297, 171);
@@ -93,6 +98,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(297, 227);
@@ -103,6 +109,7 @@
             // 
             // textBox1
             // 
+            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(501, 117);
             this.textBox1.Name = "textBox1";
@@ -111,6 +118,7 @@
             // 
             // textBox2
             // 
+            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.Location = new System.Drawing.Point(501, 172);
             this.textBox2.Name = "textBox2";
@@ -119,11 +127,20 @@
             // 
             // textBox3
             // 
+            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox3.Location = new System.Drawing.Point(501, 228);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(184, 26);
             this.textBox3.TabIndex = 16;
+            // 
+            // panel1
+            // 
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(973, 531);
+            this.panel1.TabIndex = 17;
             // 
             // ManageEvaluations
             // 
@@ -139,6 +156,7 @@
             this.Controls.Add(this.manageEvaluationBtn);
             this.Controls.Add(this.closeBtn);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel1);
             this.Name = "ManageEvaluations";
             this.Text = "AssignmentOfMultipleAdvisorsToProject";
             this.Load += new System.EventHandler(this.AssignmentOfMultipleAdvisorsToProject_Load);
@@ -158,5 +176,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Panel panel1;
     }
 }

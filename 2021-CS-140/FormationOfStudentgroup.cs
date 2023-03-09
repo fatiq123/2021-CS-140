@@ -34,32 +34,51 @@ namespace _2021_CS_140
 
         private void addStudentGroup_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection("Data Source=DESKTOP-K54JBCF;Initial Catalog=ProjectA;Integrated Security=True");
-            con.Open();
+            try {
+                if (textBox1.Text != "" && textBox2.Text != "" && dateTimePicker1.Text != "")
+                {
+                    SqlConnection con = new SqlConnection("Data Source=DESKTOP-K54JBCF;Initial Catalog=ProjectA;Integrated Security=True");
+                    con.Open();
 
-            SqlCommand cmd1 = new SqlCommand("Select Id FROM Lookup WHERE Value = 'Active'", con);
-            SqlDataReader reader = cmd1.ExecuteReader();
-            while (reader.Read())
-            {
-                roleId = int.Parse(reader["Id"].ToString());
+                    SqlCommand cmd1 = new SqlCommand("Select Id FROM Lookup WHERE Value = 'Active'", con);
+                    SqlDataReader reader = cmd1.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        roleId = int.Parse(reader["Id"].ToString());
+                    }
+                    reader.Close();
+                    cmd1.Dispose();
+
+
+                    //SqlCommand cmd = new SqlCommand("Insert into GroupStudent Values(@GroupId,@StudentId,@Status,@AssignmentDate)",con);
+
+                    SqlCommand cmd = new SqlCommand("Insert into [GroupStudent] Values (@GroupId,@StudentId,@Status,@AssignmentDate)", con);
+                    cmd.Parameters.AddWithValue("@GroupId", int.Parse(textBox1.Text));
+                    cmd.Parameters.AddWithValue("@StudentId", int.Parse(textBox2.Text));
+                    cmd.Parameters.AddWithValue("@Status", roleId);
+                    cmd.Parameters.Add("@AssignmentDate", SqlDbType.Date).Value = dateTimePicker1.Value.Date;
+
+
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+
+                    MessageBox.Show("Student Group Added Successfuly", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Required Fields should not Empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            reader.Close();
-            cmd1.Dispose();
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
-
-            //SqlCommand cmd = new SqlCommand("Insert into GroupStudent Values(@GroupId,@StudentId,@Status,@AssignmentDate)",con);
-            
-            SqlCommand cmd = new SqlCommand("Insert into [GroupStudent] Values (@GroupId,@StudentId,@Status,@AssignmentDate)", con);
-            cmd.Parameters.AddWithValue("@GroupId", int.Parse(textBox1.Text));
-            cmd.Parameters.AddWithValue("@StudentId", int.Parse(textBox2.Text));
-            cmd.Parameters.AddWithValue("@Status", roleId);
-            cmd.Parameters.Add("@AssignmentDate", SqlDbType.Date).Value = dateTimePicker1.Value.Date;
-
-
-            cmd.ExecuteNonQuery();
-            con.Close();
-
-            MessageBox.Show("Student Group Added Successfuly", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormationOfStudentGroupGridView f = new FormationOfStudentGroupGridView();
+            f.Show();
         }
     }
 }

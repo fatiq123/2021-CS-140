@@ -109,6 +109,42 @@
       <DependentUpon>MarkEvaluationAgainstGroup.cs</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="EditFormationOfStudentGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditFormationOfStudentGroup.Designer.cs">
+      <DependentUpon>EditFormationOfStudentGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditManageProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditManageProject.Designer.cs">
+      <DependentUpon>EditManageProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditManageStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditManageStudent.Designer.cs">
+      <DependentUpon>EditManageStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditManageAdvisor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditManageAdvisor.Designer.cs">
+      <DependentUpon>EditManageAdvisor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageProjectGridView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageProjectGridView.Designer.cs">
+      <DependentUpon>ManageProjectGridView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormationOfStudentGroupGridView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormationOfStudentGroupGridView.Designer.cs">
+      <DependentUpon>FormationOfStudentGroupGridView.cs</DependentUpon>
+    </Compile>
     <Compile Include="MarkEvaluationAgainstGroup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +217,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="EditFormationOfStudentGroup.resx">
+      <DependentUpon>EditFormationOfStudentGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditManageProject.resx">
+      <DependentUpon>EditManageProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditManageStudent.resx">
+      <DependentUpon>EditManageStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditManageAdvisor.resx">
+      <DependentUpon>EditManageAdvisor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageProjectGridView.resx">
+      <DependentUpon>ManageProjectGridView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormationOfStudentGroupGridView.resx">
+      <DependentUpon>FormationOfStudentGroupGridView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MarkEvaluationAgainstGroup.resx">
       <DependentUpon>MarkEvaluationAgainstGroup.cs</DependentUpon>
     </EmbeddedResource>

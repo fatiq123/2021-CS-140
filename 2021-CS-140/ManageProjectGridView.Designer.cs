@@ -1,6 +1,6 @@
 ﻿namespace _2021_CS_140
 {
-    partial class ManageStudentGridView
+    partial class ManageProjectGridView
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.studentSearchBox = new System.Windows.Forms.TextBox();
+            this.projectSearchBox = new System.Windows.Forms.TextBox();
             this.SearchLabel = new System.Windows.Forms.Label();
             this.manageStudentForm = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -78,14 +78,14 @@
             this.Delete.Text = "Delete";
             this.Delete.UseColumnTextForButtonValue = true;
             // 
-            // studentSearchBox
+            // projectSearchBox
             // 
-            this.studentSearchBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.studentSearchBox.Location = new System.Drawing.Point(641, 30);
-            this.studentSearchBox.Name = "studentSearchBox";
-            this.studentSearchBox.Size = new System.Drawing.Size(217, 26);
-            this.studentSearchBox.TabIndex = 7;
-            this.studentSearchBox.TextChanged += new System.EventHandler(this.studentSearchBox_TextChanged);
+            this.projectSearchBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.projectSearchBox.Location = new System.Drawing.Point(641, 30);
+            this.projectSearchBox.Name = "projectSearchBox";
+            this.projectSearchBox.Size = new System.Drawing.Size(217, 26);
+            this.projectSearchBox.TabIndex = 7;
+            this.projectSearchBox.TextChanged += new System.EventHandler(this.studentSearchBox_TextChanged);
             // 
             // SearchLabel
             // 
@@ -100,7 +100,7 @@
             // manageStudentForm
             // 
             this.manageStudentForm.Controls.Add(this.SearchLabel);
-            this.manageStudentForm.Controls.Add(this.studentSearchBox);
+            this.manageStudentForm.Controls.Add(this.projectSearchBox);
             this.manageStudentForm.Controls.Add(this.dataGridView1);
             this.manageStudentForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.manageStudentForm.Location = new System.Drawing.Point(0, 0);
@@ -109,14 +109,14 @@
             this.manageStudentForm.TabIndex = 10;
             this.manageStudentForm.Paint += new System.Windows.Forms.PaintEventHandler(this.manageStudentForm_Paint);
             // 
-            // ManageStudentGridView
+            // ManageProjectGridView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(971, 522);
             this.Controls.Add(this.closeBtn);
             this.Controls.Add(this.manageStudentForm);
-            this.Name = "ManageStudentGridView";
+            this.Name = "ManageProjectGridView";
             this.Text = "ManageStudentGridView";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.manageStudentForm.ResumeLayout(false);
@@ -128,7 +128,7 @@
         #endregion
         private System.Windows.Forms.Button closeBtn;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox studentSearchBox;
+        private System.Windows.Forms.TextBox projectSearchBox;
         private System.Windows.Forms.Label SearchLabel;
         private System.Windows.Forms.Panel manageStudentForm;
         private System.Windows.Forms.DataGridViewButtonColumn Edit;
