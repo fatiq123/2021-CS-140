@@ -1,6 +1,6 @@
 ﻿namespace _2021_CS_140
 {
-    partial class MarkEvaluationAgainstGroup
+    partial class EditEvaluationAgainstGroup
     {
         /// <summary>
         /// Required designer variable.
@@ -30,17 +30,16 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.closeBtn = new System.Windows.Forms.Button();
-            this.manageEvaluationBtn = new System.Windows.Forms.Button();
+            this.editEvaluationBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.showMarkEvaluationBtn = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,11 +48,11 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(261, 9);
+            this.label1.Location = new System.Drawing.Point(269, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(462, 37);
+            this.label1.Size = new System.Drawing.Size(446, 37);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Mark Evaluation Against Group";
+            this.label1.Text = "Edit Evaluation Against Group";
             // 
             // closeBtn
             // 
@@ -67,17 +66,16 @@
             this.closeBtn.UseVisualStyleBackColor = true;
             this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
             // 
-            // manageEvaluationBtn
+            // editEvaluationBtn
             // 
-            this.manageEvaluationBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.manageEvaluationBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.manageEvaluationBtn.Location = new System.Drawing.Point(444, 340);
-            this.manageEvaluationBtn.Name = "manageEvaluationBtn";
-            this.manageEvaluationBtn.Size = new System.Drawing.Size(150, 37);
-            this.manageEvaluationBtn.TabIndex = 10;
-            this.manageEvaluationBtn.Text = "Evaluate Group";
-            this.manageEvaluationBtn.UseVisualStyleBackColor = true;
-            this.manageEvaluationBtn.Click += new System.EventHandler(this.advisorAssignBtn_Click);
+            this.editEvaluationBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.editEvaluationBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editEvaluationBtn.Location = new System.Drawing.Point(444, 340);
+            this.editEvaluationBtn.Name = "editEvaluationBtn";
+            this.editEvaluationBtn.Size = new System.Drawing.Size(150, 37);
+            this.editEvaluationBtn.TabIndex = 10;
+            this.editEvaluationBtn.Text = "Edit Group";
+            this.editEvaluationBtn.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -94,8 +92,9 @@
             // 
             this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(494, 200);
+            this.textBox1.Location = new System.Drawing.Point(494, 100);
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(184, 26);
             this.textBox1.TabIndex = 15;
             // 
@@ -113,11 +112,13 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dateTimePicker1.Enabled = false;
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Location = new System.Drawing.Point(494, 253);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(278, 26);
             this.dateTimePicker1.TabIndex = 17;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // label2
             // 
@@ -141,68 +142,55 @@
             this.label5.TabIndex = 19;
             this.label5.Text = "Evaluation ID";
             // 
-            // comboBox1
-            // 
-            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(494, 102);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(184, 24);
-            this.comboBox1.TabIndex = 20;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(494, 147);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(184, 24);
-            this.comboBox2.TabIndex = 21;
-            // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.showMarkEvaluationBtn);
+            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(973, 531);
             this.panel1.TabIndex = 22;
             // 
-            // showMarkEvaluationBtn
+            // textBox2
             // 
-            this.showMarkEvaluationBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.showMarkEvaluationBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.showMarkEvaluationBtn.Location = new System.Drawing.Point(444, 383);
-            this.showMarkEvaluationBtn.Name = "showMarkEvaluationBtn";
-            this.showMarkEvaluationBtn.Size = new System.Drawing.Size(150, 37);
-            this.showMarkEvaluationBtn.TabIndex = 11;
-            this.showMarkEvaluationBtn.Text = "Show Groups";
-            this.showMarkEvaluationBtn.UseVisualStyleBackColor = true;
-            this.showMarkEvaluationBtn.Click += new System.EventHandler(this.showMarkEvaluationBtn_Click);
+            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(494, 145);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(184, 26);
+            this.textBox2.TabIndex = 16;
             // 
-            // MarkEvaluationAgainstGroup
+            // textBox3
+            // 
+            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(494, 198);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(184, 26);
+            this.textBox3.TabIndex = 17;
+            // 
+            // EditEvaluationAgainstGroup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(973, 531);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.manageEvaluationBtn);
+            this.Controls.Add(this.editEvaluationBtn);
             this.Controls.Add(this.closeBtn);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
-            this.Name = "MarkEvaluationAgainstGroup";
+            this.Name = "EditEvaluationAgainstGroup";
             this.Text = "AssignmentOfMultipleAdvisorsToProject";
-            this.Load += new System.EventHandler(this.AssignmentOfMultipleAdvisorsToProject_Load);
+            this.Load += new System.EventHandler(this.EditEvaluationAgainstGroup_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -212,16 +200,15 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button closeBtn;
-        private System.Windows.Forms.Button manageEvaluationBtn;
+        private System.Windows.Forms.Button editEvaluationBtn;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button showMarkEvaluationBtn;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }

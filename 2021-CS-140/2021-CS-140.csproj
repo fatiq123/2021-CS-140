@@ -105,6 +105,14 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include=".Designer - Copy %282%29.cs">
+      <DependentUpon>EditManageEvaluation.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include=".Designer - Copy - Copy.cs">
+      <DependentUpon>EditEvaluationAgainstGroup.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include=".Designer - Copy.cs">
       <DependentUpon>MarkEvaluationAgainstGroup.cs</DependentUpon>
       <SubType>Form</SubType>
@@ -132,6 +140,36 @@
     </Compile>
     <Compile Include="EditManageAdvisor.Designer.cs">
       <DependentUpon>EditManageAdvisor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AssignmentOfProjectToGroupGridView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AssignmentOfProjectToGroupGridView.Designer.cs">
+      <DependentUpon>AssignmentOfProjectToGroupGridView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AssignmentOfMulitpleAdvisorToProjectGridView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AssignmentOfMulitpleAdvisorToProjectGridView.Designer.cs">
+      <DependentUpon>AssignmentOfMulitpleAdvisorToProjectGridView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditEvaluationAgainstGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MarkEvaluationAgainstGroupGridView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MarkEvaluationAgainstGroupGridView.Designer.cs">
+      <DependentUpon>MarkEvaluationAgainstGroupGridView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageEvaluationGridView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageEvaluationGridView.Designer.cs">
+      <DependentUpon>ManageEvaluationGridView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditManageEvaluation.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="ManageProjectGridView.cs">
       <SubType>Form</SubType>
@@ -228,6 +266,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditManageAdvisor.resx">
       <DependentUpon>EditManageAdvisor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssignmentOfProjectToGroupGridView.resx">
+      <DependentUpon>AssignmentOfProjectToGroupGridView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssignmentOfMulitpleAdvisorToProjectGridView.resx">
+      <DependentUpon>AssignmentOfMulitpleAdvisorToProjectGridView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditEvaluationAgainstGroup.resx">
+      <DependentUpon>EditEvaluationAgainstGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MarkEvaluationAgainstGroupGridView.resx">
+      <DependentUpon>MarkEvaluationAgainstGroupGridView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageEvaluationGridView.resx">
+      <DependentUpon>ManageEvaluationGridView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditManageEvaluation.resx">
+      <DependentUpon>EditManageEvaluation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManageProjectGridView.resx">
       <DependentUpon>ManageProjectGridView.cs</DependentUpon>

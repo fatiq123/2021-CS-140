@@ -33,8 +33,24 @@ namespace _2021_CS_140
                     SqlConnection con = new SqlConnection("Data Source=DESKTOP-K54JBCF;Initial Catalog=ProjectA;Integrated Security=True");
                     con.Open();
                     SqlCommand cmd = new SqlCommand("Insert into Project values(@Description,@Title)", con);
-                    cmd.Parameters.AddWithValue("@Description", textBox1.Text);
-                    cmd.Parameters.AddWithValue("@Title", textBox2.Text);
+
+                    
+                    int value;
+                    if (Int32.TryParse(textBox1.Text, out value))
+                    {
+                        MessageBox.Show("Please enter a non-integer Description.");
+                        cmd.Parameters.AddWithValue("@Description", textBox1.Text);
+                        //e.Cancel = true;
+                    }
+
+                    int value1;
+                    if (Int32.TryParse(textBox1.Text, out value1))
+                    {
+                        MessageBox.Show("Please enter a non-integer Title.");
+                        cmd.Parameters.AddWithValue("@Title", textBox2.Text);
+                        //e.Cancel = true;
+                    }
+
 
                     cmd.ExecuteNonQuery();
                     con.Close();

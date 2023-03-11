@@ -53,8 +53,31 @@ namespace _2021_CS_140
                     //SqlCommand cmd = new SqlCommand("Insert into GroupStudent Values(@GroupId,@StudentId,@Status,@AssignmentDate)",con);
 
                     SqlCommand cmd = new SqlCommand("Insert into [GroupStudent] Values (@GroupId,@StudentId,@Status,@AssignmentDate)", con);
-                    cmd.Parameters.AddWithValue("@GroupId", int.Parse(textBox1.Text));
-                    cmd.Parameters.AddWithValue("@StudentId", int.Parse(textBox2.Text));
+
+
+                    int number;
+                    if (int.TryParse(textBox1.Text, out number))
+                    {
+                        // input is a valid integer, do something with it
+                        cmd.Parameters.AddWithValue("@GroupId", int.Parse(textBox1.Text));
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please enter GroupId as integer.");
+                    }
+
+                    int number1;
+                    if (int.TryParse(textBox1.Text, out number1))
+                    {
+                        // input is a valid integer, do something with it
+                        cmd.Parameters.AddWithValue("@StudentId", int.Parse(textBox2.Text));
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please enter StudentId as integer.");
+                    }
+
+                    
                     cmd.Parameters.AddWithValue("@Status", roleId);
                     cmd.Parameters.Add("@AssignmentDate", SqlDbType.Date).Value = dateTimePicker1.Value.Date;
 

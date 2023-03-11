@@ -72,7 +72,7 @@ namespace _2021_CS_140
                 }
                 else
                 {
-                    MessageBox.Show("Project Fields should not Empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("All Project Fields should not Empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch(Exception ex)
@@ -81,6 +81,11 @@ namespace _2021_CS_140
             }
         }
 
+        private void showAssignedProjectBtn_Click(object sender, EventArgs e)
+        {
+            AssignmentOfProjectToGroupGridView a = new AssignmentOfProjectToGroupGridView();
+            a.Show();
 
+        }
     }
 }

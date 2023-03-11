@@ -109,5 +109,11 @@ namespace _2021_CS_140
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void showAdvisorGridViewBtn_Click(object sender, EventArgs e)
+        {
+            AssignmentOfMultipleAdvisorToProjectGridView a = new AssignmentOfMultipleAdvisorToProjectGridView();
+            a.Show();
+        }
     }
 }

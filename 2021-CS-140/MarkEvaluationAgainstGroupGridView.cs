@@ -17,12 +17,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace _2021_CS_140
 {
-    public partial class FormationOfStudentGroupGridView : Form
+    public partial class MarkEvaluationAgainstGroupGridView : Form
     {
-        // to make it global
-        private DataTable stdDataTable = new DataTable();
-
-        public FormationOfStudentGroupGridView()
+        public MarkEvaluationAgainstGroupGridView()
         {
             InitializeComponent();
         }
@@ -34,11 +31,10 @@ namespace _2021_CS_140
 
         private void studentSearchBox_TextChanged(object sender, EventArgs e)
         {
-
             try
             {
                 //(dataGridView1.DataSource as DataTable).DefaultView.RowFilter = String.Format("ObtainedMarks Like '%" + markEvaluationSearchBox.Text + "%'");
-                string searchValue = groupStudentSearchBox.Text.Trim();
+                string searchValue = markEvaluationSearchBox.Text.Trim();
 
                 if (string.IsNullOrEmpty(searchValue))
                 {
@@ -52,14 +48,13 @@ namespace _2021_CS_140
 
                 }
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
 
         }
 
-        
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             SqlConnection con = new SqlConnection("Data Source=DESKTOP-K54JBCF;Initial Catalog=ProjectA;Integrated Security=True");
@@ -69,47 +64,43 @@ namespace _2021_CS_140
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
                 int groupId = Convert.ToInt32(row.Cells["GroupId"].Value.ToString()); // Replace ID_COLUMN_NAME with the name of the ID column in your database table
                 // Replace NAME_COLUMN_NAME with the name of the name column in your database table
-                int studentId = Convert.ToInt32(row.Cells["StudentId"].Value.ToString());
-                int status = Convert.ToInt32(row.Cells["Status"].Value.ToString());
-
-                string date = row.Cells["AssignmentDate"].Value.ToString();
-                // Similarly, get the values of all other columns you want to edit
-
+                int evaluationId = Convert.ToInt32(row.Cells["EvaluationId"].Value.ToString());
+                int obtainedMarks = Convert.ToInt32(row.Cells["ObtainedMarks"].Value.ToString());
+                string date = row.Cells["EvaluationDate"].Value.ToString();
 
                 // Show a form with textboxes to edit the data
-                EditFormationOfStudentGroup editForm = new EditFormationOfStudentGroup(groupId, studentId, status, date);
+                EditEvaluationAgainstGroup editForm = new EditEvaluationAgainstGroup(groupId, evaluationId, obtainedMarks, date);
                 DialogResult result = editForm.ShowDialog();
-                
+
                 // If the user clicks OK on the edit form, update the data in the database
                 if (result == DialogResult.OK)
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("UPDATE GroupStudent SET GroupId=@GroupId, StudentId=@StudentId, Status=@Status, AssignmentDate=@AssignmentDate WHERE Id=@Id", con);
+                    SqlCommand cmd = new SqlCommand("UPDATE GroupEvaluation SET GroupId=@GroupId, EvaluationId=@EvaluationId, ObtainedMarks=@ObtainedMarks, EvaluationDate=@EvaluationDate", con);
                     cmd.Parameters.AddWithValue("@GroupId", groupId);
-                    cmd.Parameters.AddWithValue("@StudentId", studentId);
-                    cmd.Parameters.AddWithValue("@Status", status);
-                    cmd.Parameters.AddWithValue("@AssignmentDate", date);
+                    cmd.Parameters.AddWithValue("@EvaluationId", evaluationId);
+                    cmd.Parameters.AddWithValue("@ObtainedMarks", obtainedMarks);
+                    cmd.Parameters.AddWithValue("@EvaluationDate", date);
                     cmd.ExecuteNonQuery();
 
 
-
                     // Update the data in the DataGridView control
-                    row.Cells["GroupId"].Value = groupId;
-                    row.Cells["StudentId"].Value = studentId;
-                    row.Cells["Status"].Value = status;
-                    row.Cells["AssignmentDate"].Value = date;
+                    row.Cells["GroupId"].Value = groupId; // Replace NAME_COLUMN_NAME with the name of the name column in your database table
+                    row.Cells["EvaluationId"].Value = evaluationId;
+                    row.Cells["ObtainedMarks"].Value = obtainedMarks;
+                    row.Cells["EvaluationDate"].Value = date;
                     con.Close();
                 }
             }
 
         }
 
-        private void FormationOfStudentGroupGridView_Load(object sender, EventArgs e)
+        private void MarkEvaluationAgainstGroupGridView_Load(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection("Data Source=DESKTOP-K54JBCF;Initial Catalog=ProjectA;Integrated Security=True");
 
             // create a SqlCommand object
-            SqlCommand cmd = new SqlCommand("Select GroupId,StudentId,Status,AssignmentDate FROM GroupStudent", con);
+            SqlCommand cmd = new SqlCommand("Select GroupId,EvaluationId,ObtainedMarks,EvaluationDate From GroupEvaluation", con);
 
             // create a SqlDataAdapter object
             SqlDataAdapter da = new SqlDataAdapter(cmd);

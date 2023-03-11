@@ -1,6 +1,6 @@
 ﻿namespace _2021_CS_140
 {
-    partial class FormationOfStudentGroupGridView
+    partial class AssignmentOfMultipleAdvisorToProjectGridView
     {
         /// <summary>
         /// Required designer variable.
@@ -30,8 +30,6 @@
         {
             this.closeBtn = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupStudentSearchBox = new System.Windows.Forms.TextBox();
             this.SearchLabel = new System.Windows.Forms.Label();
             this.manageStudentForm = new System.Windows.Forms.Panel();
@@ -55,28 +53,11 @@
             // 
             this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Edit,
-            this.Delete});
             this.dataGridView1.Location = new System.Drawing.Point(10, 64);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(949, 322);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // Edit
-            // 
-            this.Edit.HeaderText = "Edit";
-            this.Edit.Name = "Edit";
-            this.Edit.Text = "Edit";
-            this.Edit.UseColumnTextForButtonValue = true;
-            // 
-            // Delete
-            // 
-            this.Delete.HeaderText = "Delete";
-            this.Delete.Name = "Delete";
-            this.Delete.Text = "Delete";
-            this.Delete.UseColumnTextForButtonValue = true;
             // 
             // groupStudentSearchBox
             // 
@@ -91,11 +72,11 @@
             // 
             this.SearchLabel.AutoSize = true;
             this.SearchLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchLabel.Location = new System.Drawing.Point(466, 30);
+            this.SearchLabel.Location = new System.Drawing.Point(456, 30);
             this.SearchLabel.Name = "SearchLabel";
-            this.SearchLabel.Size = new System.Drawing.Size(169, 24);
+            this.SearchLabel.Size = new System.Drawing.Size(179, 24);
             this.SearchLabel.TabIndex = 8;
-            this.SearchLabel.Text = "Search By GroupId";
+            this.SearchLabel.Text = "Search By AdvisorId";
             // 
             // manageStudentForm
             // 
@@ -108,14 +89,14 @@
             this.manageStudentForm.Size = new System.Drawing.Size(971, 522);
             this.manageStudentForm.TabIndex = 10;
             // 
-            // FormationOfStudentGroupGridView
+            // AssignmentOfMultipleAdvisorToProjectGridView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(971, 522);
             this.Controls.Add(this.closeBtn);
             this.Controls.Add(this.manageStudentForm);
-            this.Name = "FormationOfStudentGroupGridView";
+            this.Name = "AssignmentOfMultipleAdvisorToProjectGridView";
             this.Text = "ManageStudentGridView";
             this.Load += new System.EventHandler(this.FormationOfStudentGroupGridView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -131,7 +112,5 @@
         private System.Windows.Forms.TextBox groupStudentSearchBox;
         private System.Windows.Forms.Label SearchLabel;
         private System.Windows.Forms.Panel manageStudentForm;
-        private System.Windows.Forms.DataGridViewButtonColumn Edit;
-        private System.Windows.Forms.DataGridViewButtonColumn Delete;
     }
 }

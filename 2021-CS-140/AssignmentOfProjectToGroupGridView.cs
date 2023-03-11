@@ -17,12 +17,12 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace _2021_CS_140
 {
-    public partial class FormationOfStudentGroupGridView : Form
+    public partial class AssignmentOfProjectToGroupGridView : Form
     {
         // to make it global
         private DataTable stdDataTable = new DataTable();
 
-        public FormationOfStudentGroupGridView()
+        public AssignmentOfProjectToGroupGridView()
         {
             InitializeComponent();
         }
@@ -38,7 +38,7 @@ namespace _2021_CS_140
             try
             {
                 //(dataGridView1.DataSource as DataTable).DefaultView.RowFilter = String.Format("ObtainedMarks Like '%" + markEvaluationSearchBox.Text + "%'");
-                string searchValue = groupStudentSearchBox.Text.Trim();
+                string searchValue = assignmentOfGroupSearchBox.Text.Trim();
 
                 if (string.IsNullOrEmpty(searchValue))
                 {
@@ -56,7 +56,6 @@ namespace _2021_CS_140
             {
                 MessageBox.Show(ex.Message);
             }
-
         }
 
         
@@ -67,39 +66,12 @@ namespace _2021_CS_140
             if (e.ColumnIndex == dataGridView1.Columns["Edit"].Index && e.RowIndex >= 0)
             {
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-                int groupId = Convert.ToInt32(row.Cells["GroupId"].Value.ToString()); // Replace ID_COLUMN_NAME with the name of the ID column in your database table
+                int projectId = Convert.ToInt32(row.Cells["ProjectId"].Value.ToString()); // Replace ID_COLUMN_NAME with the name of the ID column in your database table
                 // Replace NAME_COLUMN_NAME with the name of the name column in your database table
-                int studentId = Convert.ToInt32(row.Cells["StudentId"].Value.ToString());
-                int status = Convert.ToInt32(row.Cells["Status"].Value.ToString());
-
+                int groupId = Convert.ToInt32(row.Cells["GroupId"].Value.ToString());
                 string date = row.Cells["AssignmentDate"].Value.ToString();
                 // Similarly, get the values of all other columns you want to edit
 
-
-                // Show a form with textboxes to edit the data
-                EditFormationOfStudentGroup editForm = new EditFormationOfStudentGroup(groupId, studentId, status, date);
-                DialogResult result = editForm.ShowDialog();
-                
-                // If the user clicks OK on the edit form, update the data in the database
-                if (result == DialogResult.OK)
-                {
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand("UPDATE GroupStudent SET GroupId=@GroupId, StudentId=@StudentId, Status=@Status, AssignmentDate=@AssignmentDate WHERE Id=@Id", con);
-                    cmd.Parameters.AddWithValue("@GroupId", groupId);
-                    cmd.Parameters.AddWithValue("@StudentId", studentId);
-                    cmd.Parameters.AddWithValue("@Status", status);
-                    cmd.Parameters.AddWithValue("@AssignmentDate", date);
-                    cmd.ExecuteNonQuery();
-
-
-
-                    // Update the data in the DataGridView control
-                    row.Cells["GroupId"].Value = groupId;
-                    row.Cells["StudentId"].Value = studentId;
-                    row.Cells["Status"].Value = status;
-                    row.Cells["AssignmentDate"].Value = date;
-                    con.Close();
-                }
             }
 
         }
@@ -109,7 +81,7 @@ namespace _2021_CS_140
             SqlConnection con = new SqlConnection("Data Source=DESKTOP-K54JBCF;Initial Catalog=ProjectA;Integrated Security=True");
 
             // create a SqlCommand object
-            SqlCommand cmd = new SqlCommand("Select GroupId,StudentId,Status,AssignmentDate FROM GroupStudent", con);
+            SqlCommand cmd = new SqlCommand("Select ProjectId,GroupId,AssignmentDate FROM GroupProject", con);
 
             // create a SqlDataAdapter object
             SqlDataAdapter da = new SqlDataAdapter(cmd);

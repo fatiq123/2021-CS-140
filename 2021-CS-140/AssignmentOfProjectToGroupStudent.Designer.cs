@@ -38,6 +38,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.assignProjectBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.showAssignedProjectBtn = new System.Windows.Forms.Button();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -47,9 +49,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(268, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(506, 31);
+            this.label1.Size = new System.Drawing.Size(513, 31);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Assignment Of Project To Group Student";
+            this.label1.Text = "Assignment Of Project To Student Group ";
             // 
             // label2
             // 
@@ -137,11 +139,24 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.showAssignedProjectBtn);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(983, 530);
             this.panel1.TabIndex = 9;
+            // 
+            // showAssignedProjectBtn
+            // 
+            this.showAssignedProjectBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.showAssignedProjectBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.showAssignedProjectBtn.Location = new System.Drawing.Point(445, 355);
+            this.showAssignedProjectBtn.Name = "showAssignedProjectBtn";
+            this.showAssignedProjectBtn.Size = new System.Drawing.Size(140, 42);
+            this.showAssignedProjectBtn.TabIndex = 9;
+            this.showAssignedProjectBtn.Text = "Show Project";
+            this.showAssignedProjectBtn.UseVisualStyleBackColor = true;
+            this.showAssignedProjectBtn.Click += new System.EventHandler(this.showAssignedProjectBtn_Click);
             // 
             // AssignmentOfProjectToGroupStudent
             // 
@@ -161,6 +176,7 @@
             this.Name = "AssignmentOfProjectToGroupStudent";
             this.Text = "AssignmentOfProjectToGroupStudent";
             this.Load += new System.EventHandler(this.AssignmentOfProjectToGroupStudent_Load);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -178,5 +194,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button assignProjectBtn;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button showAssignedProjectBtn;
     }
 }

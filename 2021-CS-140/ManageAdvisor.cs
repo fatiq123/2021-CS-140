@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace _2021_CS_140
 {
@@ -34,10 +35,32 @@ namespace _2021_CS_140
 
                     // add values             
                     SqlCommand cmd = new SqlCommand("insert into Person values(@FirstName,@LastName,@Contact,@Email,@DateOfBirth,@Gender)", con);
-                    cmd.Parameters.AddWithValue("@FirstName", textBox3.Text);
-                    cmd.Parameters.AddWithValue("@LastName", textBox4.Text);
-                    cmd.Parameters.AddWithValue("@Contact", textBox5.Text);
-                    cmd.Parameters.AddWithValue("@Email", textBox6.Text);
+
+                    int value;
+                    if (Int32.TryParse(textBox3.Text, out value))
+                    {
+                        MessageBox.Show("Please enter FirstName as String.");
+                        cmd.Parameters.AddWithValue("@FirstName", textBox3.Text);
+                    }
+                    int value1;
+                    if (Int32.TryParse(textBox4.Text, out value1))
+                    {
+                        MessageBox.Show("Please enter LastName as String.");
+                        cmd.Parameters.AddWithValue("@LastName", textBox4.Text);
+                    }
+                    int value2;
+                    if (Int32.TryParse(textBox5.Text, out value2))
+                    {
+                        MessageBox.Show("Please enter Contact as String.");
+                        cmd.Parameters.AddWithValue("@Contact", textBox5.Text);
+                    }
+                    int value3;
+                    if (Int32.TryParse(textBox6.Text, out value3))
+                    {
+                        MessageBox.Show("Please enter Email as String.");
+                        cmd.Parameters.AddWithValue("@Email", textBox6.Text);
+                    }
+                    
                     cmd.Parameters.Add("@DateOfBirth", SqlDbType.Date).Value = dateTimePicker1.Value.Date;
 
 
@@ -73,7 +96,19 @@ namespace _2021_CS_140
                     string query2 = "insert into Advisor (Id,Designation,Salary) Values((SELECT MAX(Id) FROM Person),@Designation,@Salary)";
                     SqlCommand cmd3 = new SqlCommand(query2, con);
                     cmd3.Parameters.AddWithValue("@Designation", designation);
-                    cmd3.Parameters.AddWithValue("@Salary", textBox2.Text);
+
+                    int number;
+                    if (int.TryParse(textBox2.Text, out number))
+                    {
+                        // input is a valid integer, do something with it
+                        cmd3.Parameters.AddWithValue("@Salary", textBox2.Text);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please enter Salary in Integer.");
+                    }
+
+                    
 
                     cmd3.ExecuteNonQuery();
 

@@ -35,6 +35,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.closeBtn = new System.Windows.Forms.Button();
             this.editProjectBtn = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // label1
@@ -112,6 +113,14 @@
             this.editProjectBtn.UseVisualStyleBackColor = true;
             this.editProjectBtn.Click += new System.EventHandler(this.editProjectBtn_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(981, 523);
+            this.panel1.TabIndex = 7;
+            // 
             // EditManageProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -124,6 +133,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel1);
             this.Name = "EditManageProject";
             this.Text = "EditManageProject";
             this.Load += new System.EventHandler(this.EditManageProject_Load);
@@ -141,5 +151,6 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button closeBtn;
         private System.Windows.Forms.Button editProjectBtn;
+        private System.Windows.Forms.Panel panel1;
     }
 }

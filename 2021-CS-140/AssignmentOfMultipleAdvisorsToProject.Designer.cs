@@ -40,6 +40,8 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.showAdvisorGridViewBtn = new System.Windows.Forms.Button();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -162,11 +164,24 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.showAdvisorGridViewBtn);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(973, 531);
             this.panel1.TabIndex = 13;
+            // 
+            // showAdvisorGridViewBtn
+            // 
+            this.showAdvisorGridViewBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.showAdvisorGridViewBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.showAdvisorGridViewBtn.Location = new System.Drawing.Point(439, 378);
+            this.showAdvisorGridViewBtn.Name = "showAdvisorGridViewBtn";
+            this.showAdvisorGridViewBtn.Size = new System.Drawing.Size(150, 37);
+            this.showAdvisorGridViewBtn.TabIndex = 11;
+            this.showAdvisorGridViewBtn.Text = "Show Advisor";
+            this.showAdvisorGridViewBtn.UseVisualStyleBackColor = true;
+            this.showAdvisorGridViewBtn.Click += new System.EventHandler(this.showAdvisorGridViewBtn_Click);
             // 
             // AssignmentOfMultipleAdvisorsToProject
             // 
@@ -188,6 +203,7 @@
             this.Name = "AssignmentOfMultipleAdvisorsToProject";
             this.Text = "AssignmentOfMultipleAdvisorsToProject";
             this.Load += new System.EventHandler(this.AssignmentOfMultipleAdvisorsToProject_Load);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,5 +223,6 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button showAdvisorGridViewBtn;
     }
 }

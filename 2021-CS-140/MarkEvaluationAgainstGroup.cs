@@ -64,10 +64,21 @@ namespace _2021_CS_140
                     con.Open();
 
                     SqlCommand cmd = new SqlCommand("Insert into GroupEvaluation values(@GroupId,@EvaluationId,@ObtainedMarks,@EvaluationDate)", con);
-
+                    
                     cmd.Parameters.AddWithValue("@GroupId", comboBox1.Text);
                     cmd.Parameters.AddWithValue("@EvaluationId", comboBox2.Text);
-                    cmd.Parameters.AddWithValue("@ObtainedMarks", textBox1.Text);
+
+                    int number;
+                    if (int.TryParse(textBox1.Text, out number))
+                    {
+                        // input is a valid integer, do something with it
+                        cmd.Parameters.AddWithValue("@ObtainedMarks", textBox1.Text);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please enter a valid integer in ObtainedMarks Field", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    
                     cmd.Parameters.Add("@EvaluationDate", SqlDbType.Date).Value = dateTimePicker1.Value.Date;
 
 
@@ -87,6 +98,12 @@ namespace _2021_CS_140
                 MessageBox.Show(ex.Message);
             }
 
+        }
+
+        private void showMarkEvaluationBtn_Click(object sender, EventArgs e)
+        {
+            MarkEvaluationAgainstGroupGridView m = new MarkEvaluationAgainstGroupGridView();
+            m.Show();
         }
     }
 }

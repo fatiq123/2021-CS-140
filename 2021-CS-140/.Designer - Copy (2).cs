@@ -1,6 +1,6 @@
 ﻿namespace _2021_CS_140
 {
-    partial class ManageEvaluations
+    partial class EditManageEvaluation
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.closeBtn = new System.Windows.Forms.Button();
-            this.manageEvaluationBtn = new System.Windows.Forms.Button();
+            this.editManageEvaluationBtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -38,8 +38,6 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -49,9 +47,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(341, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(306, 37);
+            this.label1.Size = new System.Drawing.Size(370, 37);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Manage Evaluations";
+            this.label1.Text = "Edit Manage Evaluations";
             // 
             // closeBtn
             // 
@@ -65,17 +63,17 @@
             this.closeBtn.UseVisualStyleBackColor = true;
             this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
             // 
-            // manageEvaluationBtn
+            // editManageEvaluationBtn
             // 
-            this.manageEvaluationBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.manageEvaluationBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.manageEvaluationBtn.Location = new System.Drawing.Point(444, 340);
-            this.manageEvaluationBtn.Name = "manageEvaluationBtn";
-            this.manageEvaluationBtn.Size = new System.Drawing.Size(150, 37);
-            this.manageEvaluationBtn.TabIndex = 10;
-            this.manageEvaluationBtn.Text = "Evaluate";
-            this.manageEvaluationBtn.UseVisualStyleBackColor = true;
-            this.manageEvaluationBtn.Click += new System.EventHandler(this.advisorAssignBtn_Click);
+            this.editManageEvaluationBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.editManageEvaluationBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editManageEvaluationBtn.Location = new System.Drawing.Point(444, 340);
+            this.editManageEvaluationBtn.Name = "editManageEvaluationBtn";
+            this.editManageEvaluationBtn.Size = new System.Drawing.Size(150, 37);
+            this.editManageEvaluationBtn.TabIndex = 10;
+            this.editManageEvaluationBtn.Text = "Edit Evaluation";
+            this.editManageEvaluationBtn.UseVisualStyleBackColor = true;
+            this.editManageEvaluationBtn.Click += new System.EventHandler(this.editManageEvaluationBtn_Click);
             // 
             // label2
             // 
@@ -138,26 +136,13 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(973, 531);
             this.panel1.TabIndex = 17;
             // 
-            // button1
-            // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(444, 383);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(163, 37);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Show Evaluation";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // ManageEvaluations
+            // EditManageEvaluation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -168,13 +153,13 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.manageEvaluationBtn);
+            this.Controls.Add(this.editManageEvaluationBtn);
             this.Controls.Add(this.closeBtn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
-            this.Name = "ManageEvaluations";
+            this.Name = "EditManageEvaluation";
             this.Text = "AssignmentOfMultipleAdvisorsToProject";
-            this.panel1.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.EditManageEvaluation_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,7 +169,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button closeBtn;
-        private System.Windows.Forms.Button manageEvaluationBtn;
+        private System.Windows.Forms.Button editManageEvaluationBtn;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -192,6 +177,5 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
     }
 }

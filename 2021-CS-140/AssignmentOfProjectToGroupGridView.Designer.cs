@@ -1,6 +1,6 @@
 ﻿namespace _2021_CS_140
 {
-    partial class FormationOfStudentGroupGridView
+    partial class AssignmentOfProjectToGroupGridView
     {
         /// <summary>
         /// Required designer variable.
@@ -30,9 +30,7 @@
         {
             this.closeBtn = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.groupStudentSearchBox = new System.Windows.Forms.TextBox();
+            this.assignmentOfGroupSearchBox = new System.Windows.Forms.TextBox();
             this.SearchLabel = new System.Windows.Forms.Label();
             this.manageStudentForm = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -55,37 +53,20 @@
             // 
             this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Edit,
-            this.Delete});
             this.dataGridView1.Location = new System.Drawing.Point(10, 64);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(949, 322);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // Edit
+            // assignmentOfGroupSearchBox
             // 
-            this.Edit.HeaderText = "Edit";
-            this.Edit.Name = "Edit";
-            this.Edit.Text = "Edit";
-            this.Edit.UseColumnTextForButtonValue = true;
-            // 
-            // Delete
-            // 
-            this.Delete.HeaderText = "Delete";
-            this.Delete.Name = "Delete";
-            this.Delete.Text = "Delete";
-            this.Delete.UseColumnTextForButtonValue = true;
-            // 
-            // groupStudentSearchBox
-            // 
-            this.groupStudentSearchBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupStudentSearchBox.Location = new System.Drawing.Point(641, 30);
-            this.groupStudentSearchBox.Name = "groupStudentSearchBox";
-            this.groupStudentSearchBox.Size = new System.Drawing.Size(217, 26);
-            this.groupStudentSearchBox.TabIndex = 7;
-            this.groupStudentSearchBox.TextChanged += new System.EventHandler(this.studentSearchBox_TextChanged);
+            this.assignmentOfGroupSearchBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.assignmentOfGroupSearchBox.Location = new System.Drawing.Point(641, 30);
+            this.assignmentOfGroupSearchBox.Name = "assignmentOfGroupSearchBox";
+            this.assignmentOfGroupSearchBox.Size = new System.Drawing.Size(217, 26);
+            this.assignmentOfGroupSearchBox.TabIndex = 7;
+            this.assignmentOfGroupSearchBox.TextChanged += new System.EventHandler(this.studentSearchBox_TextChanged);
             // 
             // SearchLabel
             // 
@@ -100,7 +81,7 @@
             // manageStudentForm
             // 
             this.manageStudentForm.Controls.Add(this.SearchLabel);
-            this.manageStudentForm.Controls.Add(this.groupStudentSearchBox);
+            this.manageStudentForm.Controls.Add(this.assignmentOfGroupSearchBox);
             this.manageStudentForm.Controls.Add(this.dataGridView1);
             this.manageStudentForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.manageStudentForm.Location = new System.Drawing.Point(0, 0);
@@ -108,14 +89,14 @@
             this.manageStudentForm.Size = new System.Drawing.Size(971, 522);
             this.manageStudentForm.TabIndex = 10;
             // 
-            // FormationOfStudentGroupGridView
+            // AssignmentOfProjectToGroupGridView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(971, 522);
             this.Controls.Add(this.closeBtn);
             this.Controls.Add(this.manageStudentForm);
-            this.Name = "FormationOfStudentGroupGridView";
+            this.Name = "AssignmentOfProjectToGroupGridView";
             this.Text = "ManageStudentGridView";
             this.Load += new System.EventHandler(this.FormationOfStudentGroupGridView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -128,10 +109,8 @@
         #endregion
         private System.Windows.Forms.Button closeBtn;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox groupStudentSearchBox;
+        private System.Windows.Forms.TextBox assignmentOfGroupSearchBox;
         private System.Windows.Forms.Label SearchLabel;
         private System.Windows.Forms.Panel manageStudentForm;
-        private System.Windows.Forms.DataGridViewButtonColumn Edit;
-        private System.Windows.Forms.DataGridViewButtonColumn Delete;
     }
 }
