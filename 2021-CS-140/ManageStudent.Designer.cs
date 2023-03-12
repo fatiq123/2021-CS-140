@@ -47,6 +47,8 @@
             this.closebtn = new System.Windows.Forms.Button();
             this.addstudentbtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label8
@@ -241,11 +243,22 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(973, 529);
             this.panel1.TabIndex = 23;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(788, 224);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(106, 49);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Report";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // ManageStudent
             // 
@@ -273,6 +286,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "ManageStudent";
             this.Text = "ManageStudent";
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -299,5 +313,6 @@
         private System.Windows.Forms.Button closebtn;
         private System.Windows.Forms.Button addstudentbtn;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button1;
     }
 }
